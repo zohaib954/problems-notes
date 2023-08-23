@@ -1,0 +1,10 @@
+                                        SORTING USING COMPARATORS
+
+
+
+-> we use Collections.sort(arr, new Comparators<Integer>(){
+
+});
+class to sort the list as a custom sorting.
+-> inside the Comparators we need to apply abstract method compare.
+-> if the return is -ve then a shift right and b shift left and if the return is +ve then b shift right and a shift left.
