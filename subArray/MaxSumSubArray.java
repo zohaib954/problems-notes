@@ -70,5 +70,26 @@ for(int i=0; i<A;  i++){
 }
  */
 public class MaxSumSubArray {
-    
+    static int solve1(int A, int B, int C[]) {
+        int maxSum = 0;
+        for (int i = 0; i < A; i++) {
+            int sum = 0;
+            for (int j = i; j < A; j++) {
+                sum += C[j];
+                if (sum <= B) {
+                    maxSum = Math.max(maxSum, sum);
+                } else {
+                    break;
+                }
+            }
+        }
+        return maxSum;
+    }
+
+    public static void main(String[] args) {
+        int C[] = { 2, 1, 3, 4, 5 };
+        int B = 14;
+        int A = 5;
+        System.out.println(solve1(A, B, C));
+    }
 }

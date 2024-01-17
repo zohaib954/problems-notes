@@ -44,12 +44,12 @@ Example Explanation
 import java.util.Arrays;
 
 public class ChocolateDistribution {
-    static int chocolateDistribution(int A[], int B){
+    static int chocolateDistribution(int A[], int B) {
         int n = A.length;
-        if(n == 0 || B == 0){
+        if (n == 0 || B == 0) {
             return 0;
         }
-        if(B > n){
+        if (B > n) {
             return 0;
         }
 
@@ -58,7 +58,7 @@ public class ChocolateDistribution {
         int s = 1, e = B;
         int diff = A[B] - A[0];
 
-        while(e<n){
+        while (e < n) {
             int tempdiff = A[e] - A[s];
             diff = Math.min(diff, tempdiff);
             e++;
@@ -68,7 +68,7 @@ public class ChocolateDistribution {
     }
 
     public static void main(String[] args) {
-        int A[] = {3, 4, 1, 9, 56, 7, 9, 12};
+        int A[] = { 3, 4, 1, 9, 56, 7, 9, 12 };
         System.out.println(chocolateDistribution(A, 4));
     }
 }

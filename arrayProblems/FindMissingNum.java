@@ -49,19 +49,17 @@ package arrayProblems;
 
 import java.util.HashSet;
 
-class FindMissingNumber{
-    static int findMissingEfficient(int A[]){
+class FindMissingNumber {
+    static int findMissingEfficient(int A[]) {
         int n = A.length, i = 0;
-        while(i<n){
-            if(A[i] > n || A[i] <= 0 || A[i] == i+1){
+        while (i < n) {
+            if (A[i] > n || A[i] <= 0 || A[i] == i + 1) {
                 i++;
-            }
-            else{
+            } else {
                 int correctIndex = A[i] - 1;
-                if(A[i] == A[correctIndex]){
+                if (A[i] == A[correctIndex]) {
                     i++;
-                }
-                else{
+                } else {
                     int temp = A[i];
                     A[i] = A[correctIndex];
                     A[correctIndex] = temp;
@@ -69,41 +67,43 @@ class FindMissingNumber{
             }
         }
 
-        for(int j=0; j<n; j++){
-            if(A[j] != j+1){
-                return j+1;
+        for (int j = 0; j < n; j++) {
+            if (A[j] != j + 1) {
+                return j + 1;
             }
         }
-        return n+1;
+        return n + 1;
     }
-    static int findNumTwo(int A[]){
+
+    static int findNumTwo(int A[]) {
         int n = A.length;
         HashSet<Integer> hs = new HashSet<>();
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             hs.add(A[i]);
         }
 
-        for(int i=1; i<n; i++){
-            if(hs.contains(i) == false){
+        for (int i = 1; i < n; i++) {
+            if (hs.contains(i) == false) {
                 return i;
             }
         }
-        return n+1;
+        return n + 1;
     }
-    static int findNumOne(int A[]){
+
+    static int findNumOne(int A[]) {
         int n = A.length;
         int sum = 0, ans = 0;
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             sum += A[i];
         }
-        int m = n+1;
-        ans = (m*(m+1)/2) - sum;
+        int m = n + 1;
+        ans = (m * (m + 1) / 2) - sum;
 
         return ans;
     }
+
     public static void main(String[] args) {
-        int arr[] = {1,2,3,5};
-        System.out.println(findNumOne(arr)); 
+        int arr[] = { 1, 2, 3, 5 };
+        System.out.println(findNumOne(arr));
     }
 }
-

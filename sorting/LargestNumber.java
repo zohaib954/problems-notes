@@ -37,7 +37,6 @@ Expected Output
 Provide sample input and click run to see the correct output for the provided input. Use this to improve your problem understanding and test edge cases
  */
 
- 
 package sorting;
 
 import java.util.ArrayList;
@@ -45,38 +44,36 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class LargestNumber {
-     public static String largestNumber(final int[] A) {
+    public static String largestNumber(final int[] A) {
         int n = A.length;
         ArrayList<Integer> list = new ArrayList<>();
-       
-        for(int i=0; i<n; i++){
+
+        for (int i = 0; i < n; i++) {
             list.add(A[i]);
         }
 
-        Collections.sort(list, new Comparator<Integer>(){
-            public int compare(Integer a, Integer b){
+        Collections.sort(list, new Comparator<Integer>() {
+            public int compare(Integer a, Integer b) {
                 String s1 = String.valueOf(a) + String.valueOf(b);
                 String s2 = String.valueOf(b) + String.valueOf(a);
 
-                if(s1.compareTo(s2) < 0){
+                if (s1.compareTo(s2) < 0) {
                     return 1;
-                }
-                else{
+                } else {
                     return -1;
                 }
             }
         });
 
         String ans = "";
-        for(int i=0; i<list.size(); i++){
+        for (int i = 0; i < list.size(); i++) {
             ans += list.get(i);
         }
         return ans;
     }
 
     public static void main(String[] args) {
-        int A[] = {3, 30, 34, 5, 9};
-
+        int A[] = { 3, 30, 34, 5, 9 };
         System.out.println(largestNumber(A));
     }
 }

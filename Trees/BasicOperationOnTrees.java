@@ -1,79 +1,50 @@
 package Trees;
 
-import Trees.MyBinaryTree.MyTreeNode;
 public class BasicOperationOnTrees {
-    //Inorder Traversal
-    /* public int[] inorderTraversal(TreeNode A) {
-        ArrayList<Integer> al = new ArrayList<>();
-        myList(A,al);
-        int i=0;
-        int arr[] = new int[al.size()];
-        for(Integer value:al){
-            arr[i++] = value;
-        }
-       return arr;
-    }
 
-    ArrayList<Integer> myList(TreeNode A, ArrayList x){
-        if(A==null){
-            return x;
-        }   
-        myList(A.left,x);
-        x.add(A.val);
-        myList(A.right,x);
-        return x;
-    } */
-    static int[] inorderTraversal(MyTreeNode A){
-
-    }
-
-    //PreOrdert Traversal
-    static int[] preOrderTraversal(MyTreeNode A){
-       
-
-        return arr;
-    }
-
-    //Count the number of nodes in a tree
-    static int countNodes(MyTreeNode A){
-        if(A==null){
-            return 0;
-        }
-
-        return countNodes(A.left) + countNodes(A.right) + 1;
-
-    }
-
-    //Height of tree
-    static int height(MyTreeNode A){
-        if(A==null){
-            return 0;
-        }
-        int LH = height(A.left);
-        int RH = height(A.right);
-
-        return Math.max(LH, RH) + 1;
-    }
-
-    //Sum of nodes in Binary Tree
-    static int sumOfNodes(MyTreeNode A){
-        if(A==null){
-            return 0;
-        }
-
-        return sumOfNodes(A.left) + sumOfNodes(A.right) + A.data;
-    }
     public static void main(String[] args) {
-        MyBinaryTree x = new MyBinaryTree();
-        MyTreeNode t1 = x.new MyTreeNode(10);
-        t1.left = x.new MyTreeNode(20);
-        t1.right = x.new MyTreeNode(30);
-        t1.right.right = x.new MyTreeNode(40);
-        t1.right.left = x.new MyTreeNode(50);
-        t1.left.left = x.new MyTreeNode(5);
+        MyBinaryTree tree = new MyBinaryTree();
+        // MyBinaryTree.Node root = tree.buildTree();
 
-        System.out.println(height(t1));
-        System.out.println(countNodes(t1));
-        System.out.println(sumOfNodes(t1));
+        // tree.preOrderTraversal(root);
+        // tree.inOrderTraversal(root);
+        // tree.postOrderTraversal(root);
+        // tree.BFT(root);
+        // tree.inOrderIterative(root);
+        // tree.printLevelPattern(root);
+        // tree.printLeftleafes(root);
+        // System.out.println();
+        // int sum = tree.sumOfLeftLeafs(root);
+        // System.out.println(sum);
+
+        // int pre[] = { 8, 6, 2, 11, 10, 16, 12, 4, 14, 9, 18, 15 };
+        // int in[] = { 11, 2, 6, 16, 10, 12, 8, 14, 4, 18, 9, 15 };
+        // int n = pre.length;
+        // MyBinaryTree.Node root = tree.preOrderToInOrder(pre, in, 0, n - 1);
+        // tree.printLevelPattern(root);
+        // System.out.println();
+        // tree.preOrderTraversal(root);
+        // System.out.println();
+        // tree.inOrderTraversal(root);
+
+        // MyBinaryTree.Node root = tree.createBST();
+        // tree.printLevelPattern(root);
+
+        // int randomArr[] = { 27, 14, 35, 10, 19, 31, 42, 7, 12, 22, 29, 37, 50, 5, 9,
+        // 16, 24, 33, 40, 48, -1 };
+        // MyBinaryTree.Node root = tree.createBST(randomArr);
+        // System.out.println(tree.searchBST(root, 1));
+
+        // int A[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        // MyBinaryTree.Node root = tree.balancedBST(A, 0, A.length - 1);
+        // tree.printLevelPattern(root);
+
+        // MyBinaryTree.Node root = tree.buildTree();
+
+        // ArrayList<Integer> al = new ArrayList<>();
+        // tree.printPath(root, al);
+
+        MyBinaryTree.Node root = tree.buildTree();
+        tree.printAtLevel(root, 2);
     }
 }
