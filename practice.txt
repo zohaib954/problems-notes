@@ -1,6 +1,0 @@
-1:- single element (searching Day 53 Q1)
-2:- Activity selection (Sorting 3 Day 51)
-3:- Rotated Array (searching 2 Day 53)
-4:- Painters partition problem (searching 3)
-5:- Aggressive cows (searching 3)
-6:- Print Nodes from kth distance from the target Nodes (Trees)
